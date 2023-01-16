@@ -23,7 +23,35 @@ namespace MVC
         public MainWindow()
         {
             InitializeComponent();
+            Model.tbxResult = ResultBox;
+            Model.tbSymbol = SymbolBox;
+
+            Combo.ItemsSource = Model.Symbols;
+            Combo.SelectedIndex = 0;
+
         }
 
+        private void Combo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Model.ComboSymbol = Combo.SelectedIndex;
+        }
+
+        private void CountBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Model.First = Convert.ToDouble(FirstBox.Text);
+            Model.Second = Convert.ToDouble(SecondBox.Text);
+
+            if(Model.First != 0 || Model.Second != 0)
+            {
+                if(Combo.SelectedIndex == 1)
+                {
+                    
+                }
+                if (Combo.SelectedIndex == 2)
+                {
+
+                }
+            }
+        }
     }
 }

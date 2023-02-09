@@ -12,9 +12,9 @@
         <TextBox x:Name="FirstBox" HorizontalAlignment="Left" Margin="44,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Height="31"/>
         <TextBox x:Name="SecondBox" HorizontalAlignment="Left" Margin="531,136,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="225" Height="31"/>
         <TextBlock x:Name="SymbolBox" Margin="346,136,346,0" Text="" Height="31" Width="108" FontSize="24" VerticalAlignment="Top" TextAlignment="Center"/>
-        <TextBox x:Name="ResultBox" Margin="0,270,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" HorizontalAlignment="Center" Width="712"/>
         <Button x:Name="CountBtn" Content="Вычислить" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Width="198" Click="CountBtn_Click"/>
-
-
+        <TextBox x:Name="ResultBox" Margin="0,293,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="34" HorizontalAlignment="Center" Width="712"/>
+        <Label Content="Результат:" HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top" Width="712" FontSize="24"/>
     </Grid>
+
 </Window>

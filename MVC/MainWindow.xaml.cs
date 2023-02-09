@@ -38,20 +38,9 @@ namespace MVC
 
         private void CountBtn_Click(object sender, RoutedEventArgs e)
         {
-            Model.First = Convert.ToDouble(FirstBox.Text);
-            Model.Second = Convert.ToDouble(SecondBox.Text);
-
-            if(Model.First != 0 || Model.Second != 0)
-            {
-                if(Combo.SelectedIndex == 1)
-                {
-                    
-                }
-                if (Combo.SelectedIndex == 2)
-                {
-
-                }
-            }
+            Model.FirstNumber = FirstBox.Text;
+            Model.SecondNumber = SecondBox.Text;
+            Model.ResultGet = Combo.SelectedIndex;
         }
     }
 }

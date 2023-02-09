@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace MVC
 {
     internal class Model
     {
-        public static double FirstNumber;
-        public static double SecondNumber;
+        public static string FirstNumber;
+        public static string SecondNumber;
         public static List<string> Symbols = new List<string> { "Сложение", "Вычитание", "Умножение", "Деление" };
         public static List<string> CharSymbols = new List<string> { "+", "-", "*", "/" };
 
@@ -25,28 +26,51 @@ namespace MVC
             }
         }
 
-        public static double First
+        public static double ResultGet
         {
-            get
-            {
-                return FirstNumber;
-            }
             set
             {
-                FirstNumber = value;
+                try
+                {
+                    double first = 0;
+                    double second = 0;
+                    if (FirstNumber != "")
+                    {
+                        first = Convert.ToDouble(FirstNumber);
+                    }
+                    if (SecondNumber != "")
+                    {
+                        second = Convert.ToDouble(SecondNumber);
+                    }
+                    switch (value)
+                    {
+                        case 0:
+                            tbxResult.Text = Convert.ToString(first + second);
+                            break;
+                        case 1:
+                            tbxResult.Text = Convert.ToString(first - second);
+                            break;
+                        case 2:
+                            tbxResult.Text = Convert.ToString(first * second);
+                            break;
+                        case 3:
+                            if (second == 0)
+                            {
+                                tbxResult.Text = "Делить на 0 нельзя";
+                            }
+                            else
+                            {
+                                tbxResult.Text = Convert.ToString(first / second);
+                            }
+                            break;
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("При вычисление арифметической операции возникла ошибка");
+                }
             }
-        }
 
-        public static double Second
-        {
-            get
-            { 
-                return SecondNumber; 
-            }
-            set
-            {
-                SecondNumber = value;
-            }
         }
     }
 }
